@@ -25,7 +25,18 @@
                   </ul>
               </div>
               <div class="col-md-10">
-                  <%= p_content  %>
+                  <h2 id="ruby">ruby</h2>
+<h3 id="rakefile-args">Rakefile args</h3>
+<p>rakefile args with <code>:example</code> task:</p>
+<pre><code class="lang-ruby">task :example, :arga, :argb do |t, args|
+  args.display_times.to_i.times do
+    puts args.display_value
+  end
+end
+</code></pre>
+<p>after running <code>rake example[&#39;oi&#39;,1]</code>; output: <code>oi</code></p>
+
+
               </div>
             </div>
         </div>

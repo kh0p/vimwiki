@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>楊文里wiki</title>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <!-- <h1><a href="/">wiki by lyuehh</a><small><a href="https://github.com/lyuehh/vimwiki"> view on GitHub</a></small></h1>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+              <div class="col-md-2">
+                  <ul>
+                      <li><a href="/Ruby.html">Ruby</a></li>  
+                      <li><a href="/Python.html">Python</a></li>
+                      <li><a href="/Vim.html">Vim</a></li>
+                      <li><a href="/Data.html">Data</a></li>
+                      <li><a href="/Algorithms.html">Algorithms</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-10">
+                  <h2 id="python">python</h2>
+<h3 id="-public-data-hacking-https-github-com-defm03-public-hax-"><a href="https://github.com/defm03/public-hax">public data hacking</a></h3>
+<p>Small bus tracking code which gets current longitude and latitude of bus from
+ctabustracker. It calculates range between given point and bus actual location;
+distance is returned in miles. It also displays current position of bus on map
+using <code>google static maps</code> API.</p>
+<p>usage of <code>urllib</code>, <code>webbrowser</code> and <code>xml.etree.ElementTree</code>:</p>
+<pre><code class="lang-python">import urllib.request
+import xml.etree.ElementTree as eltree
+</code></pre>
+<pre><code class="lang-python"># requesting page with urllib and saving to data variable
+u = urllib.request.urlopen(&#39;http://ctabustracker.com/bustime/map/getBusesForRoute.jsp?route=22&#39;)
+data = u.read()
+</code></pre>
+<pre><code class="lang-python"># parsing doc and going to root of xml data
+doc = eltree.parse(&#39;inputfile.xml&#39;) 
+root = doc.getroot()
+
+# running findall on parsed data, and using findtext to get certain info
+for bus in doc.findall(&#39;bus&#39;):
+   id_of_bus = bus.findtext(&#39;id&#39;)
+   direction_of_bus = bus.findtext(&#39;d&#39;)
+</code></pre>
+
+
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
